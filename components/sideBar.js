@@ -4,7 +4,7 @@ import styles from '@/styles/SideBar.module.css'
 export default function SideBar() {
   return (
     <div className={styles.container}>
-      <strong>Jae.Y</strong>
+      <strong className={styles.name}>Jae.Y</strong>
       <nav className={styles.navMenu}>
         <Link href="/about">
           <a style={{marginTop: 5}}>about</a>

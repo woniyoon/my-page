@@ -19,6 +19,7 @@ export default function Layout({children}) {  // container 개념
         }
         .main {
           flex: 9;
+          padding: 3em;
         }
       `}</style>
     </div>
