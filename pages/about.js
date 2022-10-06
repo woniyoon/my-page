@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { TOKEN, DATABASE_ID } from "@/config";
+import { TOKEN, DATABASE_ABOUT_ID } from "@/config";
 
 export default function About({myInfo}) {
   return (
@@ -30,7 +30,7 @@ export async function getStaticProps(context) {
     }
   };
   
-  const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options)
+  const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ABOUT_ID}/query`, options)
     
   const result = await res.json();
   
