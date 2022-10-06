@@ -9,7 +9,7 @@ export default function SideBar() {
         <Link href="/about">
           <a style={{marginTop: 5}}>about</a>
         </Link>
-        <Link href="/works">
+        <Link href="/experiences">
           <a style={{marginTop: 5}}>works</a>
         </Link>
         <Link href="/contacts">
