@@ -1,39 +1,29 @@
 import Layout from "@/components/Layout";
 import { TOKEN, DATABASE_EXP_ID } from "@/config";
+import RecordCard from "@/components/RecordCard";
 import styles from '@/styles/Experiences.module.css'
 
 export default function Experiences({record}) {
-  const renderEachWing = (item, index) => {
+  const renderEachWing = item => {
     return (
-      <div className={styles.cardContainer} key={`exp-${index}`}>
-        <strong className={styles.nameTxt}>{item.name}</strong>
-        <p className={styles.locationTxt}>{item.location}</p>
-        <p className={styles.periodTxt}>{`${item.startDate} - ${item.endDate}`}</p>
-        <div className={styles.skillContainer}>
-          <p className={styles.skillTxt}>{item.skills}</p>
-          <div className={styles.highlighter}></div>
-        </div>
-        <p className={styles.descriptionTxt}>{`• ${item.description}`}</p>
-      </div>
+      <RecordCard item={item} />
     )
   } 
 
   return (
     <Layout>
       <h2>Experiences</h2>
-      <article style={{display: 'flex', flexDirection: 'row'}}>
+      <article className={styles.mainContainer}>
         <div style={{flex: 1}}>
           {
-            record.filter((data, index) => index%2 === 0)
-                  .map((data, index) => renderEachWing(data, index))
+            record.filter(data => data.order%2 === 1)
+                  .map(data => renderEachWing(data))
           }
         </div>
-        <div style={{width: 2, borderRadius: 2, backgroundColor: 'rgb(0, 0, 0, 0.5)', margin: '0 2rem' }}>
-        </div>
-        <div style={{flex: 1 }}>
+        <div style={{flex: 1}}>
           {
-            record.filter((data, index) => index%2 === 1)
-            .map((data, index) => renderEachWing(data, index))
+            record.filter(data => data.order%2 === 0)
+            .map(data => renderEachWing(data))
           }
         </div>
       </article>
@@ -65,6 +55,7 @@ export async function getStaticProps(context) {
         startDate: row.properties.period.date.start,
         endDate: row.properties.period.date.end,
         description: row.properties.description.rich_text[0].plain_text,
+        order: row.properties.order.number,
       }
     }
   ).sort(sortByOrder);

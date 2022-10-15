@@ -1,14 +1,41 @@
+.mainContainer {
+  display: flex;
+  position: relative;
+}
+
+.mainContainer::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  border-radius: 4px;
+  background: #00000062;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    bottom: -10%;
+  }
+  50% {
+    opacity: 0.6;
+    bottom: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .cardContainer {
   border-radius: 1rem;
   padding: 1.4rem;
-  margin: 1rem;
+  margin: 3rem 1rem;
   position: relative;
   box-shadow: 8px 10px 10px 6px rgba(0, 0, 0, 0.2);
   animation: ease-in-out smoothAppear 1.2s;
-}
-
-.highlighter {
-  width: 0;
 }
 
 .cardContainer:hover .highlighter {
@@ -24,18 +51,12 @@
   transition: width ease-in-out 0.3s;
 }
 
-@keyframes smoothAppear {
-  0% {
-    opacity: 0;
-    bottom: -10%;
-  }
-  50% {
-    opacity: 0.6;
-    bottom: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.cardContainer.left {
+
+}
+
+.highlighter {
+  width: 0;
 }
 
 .nameTxt {
