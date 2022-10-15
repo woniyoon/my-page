@@ -16,13 +16,13 @@ export default function Experiences({record}) {
       <article className={styles.mainContainer}>
         <div style={{flex: 1}}>
           {
-            record.filter(data => data.order%2 === 1)
+            record.filter(data => data.order%2 === 0)
                   .map(data => renderEachWing(data))
           }
         </div>
         <div style={{flex: 1}}>
           {
-            record.filter(data => data.order%2 === 0)
+            record.filter(data => data.order%2 === 1)
             .map(data => renderEachWing(data))
           }
         </div>
