@@ -1,3 +1,5 @@
+$timeline-width: 2rem;
+
 .mainContainer {
   display: flex;
   position: relative;
@@ -6,10 +8,11 @@
 .mainContainer::after {
   content: '';
   position: absolute;
-  width: 4px;
+  width: 2px;
   border-radius: 4px;
-  background: #00000062;
+  background: rgb(170, 170, 170);
   top: 0;
+  height: 107%;
   bottom: 0;
   left: 50%;
   margin-left: -2px;
@@ -32,10 +35,16 @@
 .cardContainer {
   border-radius: 1rem;
   padding: 1.4rem;
-  margin: 3rem 1rem;
+  margin: 3rem $timeline-width;
   position: relative;
-  box-shadow: 8px 10px 10px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  // box-shadow: 8px 10px 10px 6px rgba(172, 172, 172, 0.2);
   animation: ease-in-out smoothAppear 1.2s;
+}
+
+.cardContainer:hover {
+  box-shadow: 10px 10px 10px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow ease-inrgba(0, 0, 0, 0.2)
 }
 
 .cardContainer:hover .highlighter {
@@ -51,8 +60,30 @@
   transition: width ease-in-out 0.3s;
 }
 
-.cardContainer.left {
+.container-left {
+  top: -5%;
+}
 
+.container-right {
+  top: 12%;
+}
+
+.left {
+  position: absolute;
+  background-color: rgb(170, 170, 170);
+  height: 2px;
+  width: $timeline-width;
+  right: -($timeline-width+0.01rem);
+  top: 50%;
+}
+
+.right {
+  position: absolute;
+  background-color: rgb(170, 170, 170);
+  height: 2px;
+  width: $timeline-width;
+  left: -($timeline-width+0.09rem);
+  top: 50%;
 }
 
 .highlighter {

@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { TOKEN, DATABASE_EXP_ID } from "@/config";
 import RecordCard from "@/components/RecordCard";
-import styles from '@/styles/Experiences.module.css'
+import styles from '@/styles/Experiences.module.scss'
 
 export default function Experiences({record}) {
   const renderEachWing = item => {

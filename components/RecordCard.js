@@ -1,4 +1,4 @@
-import styles from '@/styles/Experiences.module.css'
+import styles from '@/styles/Experiences.module.scss'
 
 export default function RecordCard({item}) {
   const {order, name, location, startDate, endDate, skills, description} = item;
