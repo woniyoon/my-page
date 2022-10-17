@@ -1,26 +1,22 @@
-import SideBar from "./SideBar";
+import NavBar from "./NavBar";
 
 export default function Layout({children}) {  // container 개념
   return (
     <div className="container">
-      <SideBar />
+      <NavBar />
       <div className='contents-divider'></div>
       <div className='main'>{children}</div>
       <style jsx>{`
         .container {
-          display: flex;
-          flex-direction: row;
-          height: 100vh;
-          align-items: center;
         }
         .contents-divider {
-          border-left: 3px solid black;
-          height: 95vh;
+          border-bottom: 2px solid black;
+          height: 1px;
         }
         .main {
           flex: 9;
           height: 100%;
-          padding: 5em;
+          padding: 2em;
         }
       `}</style>
     </div>
