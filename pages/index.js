@@ -11,6 +11,10 @@ export default function Home() {
       </Head>
 
       <main>
+        <div style={{height: '100%', padding: '4rem 4rem'}}>
+          <p style={{fontFamily: 'amerton', fontSize: '5rem'}}>Hello,</p>
+          <p style={{fontFamily: 'amerton', fontSize: '5rem'}}>Stranger!</p>
+        </div>
       </main>
     </Layout>
   )
