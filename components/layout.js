@@ -8,15 +8,12 @@ export default function Layout({children}) {  // container 개념
       <div className='main'>{children}</div>
       <style jsx>{`
         .container {
+          background-color: #fff7e6;
         }
         .contents-divider {
           border-bottom: 2px solid black;
-          height: 1px;
         }
         .main {
-          flex: 9;
-          height: 100%;
-          padding: 2em;
         }
       `}</style>
     </div>
