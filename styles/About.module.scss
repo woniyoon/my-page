@@ -1,0 +1,154 @@
+.main {
+  width: 100%;
+  margin: 0 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.cardContainer {
+  position: relative;
+  border: 1.5px solid black;
+  border-collapse: collapse;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.cardContainer:nth-child(1) {
+  background-color: rgb(52, 52, 52);
+}
+
+.cardContainer:nth-child(1)::after {
+  color: #fff7e6;
+  content: 'Front-end\00000aDeveloper\00a0\00a0💻';
+  font-size: 2rem;
+  white-space: pre;
+}
+
+.cardContainer:nth-child(4),
+.cardContainer:nth-child(7) {
+  background-image:
+    linear-gradient(to right, black 1px, transparent 1px),
+    linear-gradient(to bottom, black 1px, transparent 1px);
+  background-size: 11.08px 11.08px;
+}
+
+.cardContainer:nth-child(4)::after {
+  content: '\00a0\00a0\00a0\00a0😋🧇🦄';
+  font-size: 6rem;
+  width: 300px;
+  height: 6.5rem;
+  position: absolute;
+  transform: rotate(22deg);
+  top: 1rem;
+  right: -20px;
+  background-color: rgba(0, 255, 0, 0.659);
+  z-index: 1;
+  animation: upperHop 1s alternate infinite linear;
+}
+
+.cardContainer:nth-child(4)::before {
+  content: '🧸';
+  font-size: 8rem;
+  position: absolute;
+  top: 7rem;
+  right: 5rem;
+  transform: rotate(-30deg);
+  z-index: 2;
+  animation: lowerHop 1s alternate-reverse infinite linear;
+}
+
+.cardContainer:nth-child(7)::before {
+  content: '🦮';
+  font-size: 8rem;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  z-index: 2;
+  transform: rotate(-10deg) rotateY(180deg);
+  animation: spin 0.5s alternate infinite linear;
+}
+
+.cardLabel {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.cardValue {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: end;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    margin: 0 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .cardLabel {
+    font-size: 1.3rem;
+  }
+
+  .cardValue {
+    font-size: 1.7rem;
+  }
+
+  .cardContainer:nth-child(4)::after {
+    content: '\00a0\00a0\00a0\00a0😋🧇🦄';
+    font-size: 3.5rem;
+    width: 200px;
+    height: 4rem;
+    position: absolute;
+    transform: rotate(22deg);
+    top: 1rem;
+    right: -20px;
+    background-color: rgba(0, 255, 0, 0.659);
+    z-index: 3;
+  }
+  
+  .cardContainer:nth-child(4)::before {
+    content: '🧸';
+    font-size: 5rem;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 3.2rem;
+    right: 3rem;
+    transform: rotate(-30deg);
+    z-index:5;
+  }
+}
+
+// animations
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotate(-10deg) rotateY(180deg);
+  }
+}
+
+@keyframes upperHop {
+  0% {
+    top: 0rem;
+  }
+  100% {
+    top: 1rem;
+  }
+}
+
+@keyframes lowerHop {
+  0% {
+    top: 5rem;
+  }
+  100% {
+    top: 6rem;
+  }
+}

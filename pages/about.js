@@ -1,20 +1,35 @@
 import Layout from "@/components/Layout";
 import { TOKEN, DATABASE_ABOUT_ID } from "@/config";
+import styles from '@/styles/About.module.scss'
 
 export default function About({myInfo}) {
   return (
     <Layout>
-      <h2>About page</h2>
-      {
-        myInfo.map(info => {
-          return (
-            <div key={`my-info-${info.order}`}>
-              <p>{info.label}</p>
-              <p>{info.value}</p>
-            </div>
-          )
-        })
-      }
+      <div className={styles.main}>
+        {
+          myInfo.map(info => {
+            return (
+              <div className={styles.cardContainer} key={`my-info-${info.order}`}>
+                <p className={styles.cardLabel}>{info.label}</p>
+                {
+                  info.needsSplit ?
+                  <div>
+                    {
+                      info.value.split(",").map((val, index) => 
+                      <p 
+                        className={styles.cardValue}
+                        key={`val-${index}`}
+                      >{val}</p>)
+                    }
+                  </div>
+                  :
+                  <p className={styles.cardValue}>{info.value}</p>
+                }
+              </div>
+            )
+          })
+        }
+      </div>
     </Layout>
   );
 }
@@ -39,6 +54,7 @@ export async function getStaticProps(context) {
         label: row.properties.label.title[0].plain_text,
         value: row.properties.value.rich_text[0].plain_text,
         order: row.properties.order.number,
+        needsSplit: row.properties.needsSplit.rich_text[0].plain_text === 'y'
       }
     }
   ).sort(sortByOrder);
