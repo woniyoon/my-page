@@ -7,7 +7,9 @@ export default function NavBar() {
   
   return (
     <div className={styles.container}>
-      <strong className={styles.name}>FE-J1</strong>
+      <Link href='/'>
+        <a className={styles.homeIcon}>FE-J1</a>
+      </Link>
       <nav className={styles.navMenu}>
         {
           menuNames.map((menu, index) => {
