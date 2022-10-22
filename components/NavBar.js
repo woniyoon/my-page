@@ -8,7 +8,7 @@ export default function NavBar() {
   return (
     <div className={styles.container}>
       <Link href='/'>
-        <a className={styles.homeIcon}>FE-J1</a>
+        <a className={router.pathname === '/' ? styles.selectedHomeIcon : styles.homeIcon}>FE-J1</a>
       </Link>
       <nav className={styles.navMenu}>
         {
