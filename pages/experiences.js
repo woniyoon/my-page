@@ -1,32 +1,43 @@
+import {useState} from "react";
 import Layout from "@/components/Layout";
 import { TOKEN, DATABASE_EXP_ID } from "@/config";
-import RecordCard from "@/components/RecordCard";
+import TimelineMenuItem from "@/components/TimelineMenuItem";
 import styles from '@/styles/Experiences.module.scss'
+import { MdSchool, MdWork } from 'react-icons/md';
 
 export default function Experiences({record}) {
-  const renderEachWing = item => {
-    return (
-      <RecordCard item={item} />
-    )
-  } 
-
+  const [currentRecordNo, setCurrentRecordNo] = useState(1);
+  const currentRecord = record[currentRecordNo-1];
   return (
     <Layout>
-      <h2>Experiences</h2>
-      <article className={styles.mainContainer}>
-        <div style={{flex: 1}}>
+      <div className={styles.expContainer}>
+        <aside className={styles.timelineMenu}>
           {
-            record.filter(data => data.order%2 === 0)
-                  .map(data => renderEachWing(data))
+            record.map((item, index) => {
+              return (
+                <TimelineMenuItem
+                  key={`timeline-${index}`}
+                  item={item}
+                  currentRecordNo={currentRecordNo}
+                  displayThisRecord={setCurrentRecordNo} 
+                />)
+            })
           }
-        </div>
-        <div style={{flex: 1}}>
-          {
-            record.filter(data => data.order%2 === 1)
-            .map(data => renderEachWing(data))
+        </aside>
+        <article className={styles.mainContent}>
+          { 
+            currentRecord.status === 'study' ? 
+            <MdSchool size='2rem' /> : <MdWork size='2rem' />
           }
-        </div>
-      </article>
+          <span className={styles.recordTitle}>{currentRecord.name}</span>
+          <span className={styles.recordLocation}>{currentRecord.location}</span>
+          <span className={styles.recordPeriod}>{`${currentRecord.startDate} - ${currentRecord.endDate}`}</span>
+          <div className={styles.descriptionContainer}>
+            <span className={styles.recordSkills}>{currentRecord.skills}</span>
+            <p className={styles.recordDescription}>{currentRecord.description}</p>
+          </div>
+        </article>
+      </div>
     </Layout>
   );
 }

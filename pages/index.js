@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main style={{width: '100%'}}>
         <div style={{height: '100%', padding: '4rem 4rem'}}>
           <p style={{fontFamily: 'amerton', fontSize: '5rem'}}>Hello,</p>
           <p style={{fontFamily: 'amerton', fontSize: '5rem'}}>Stranger!</p>
