@@ -1,0 +1,23 @@
+.container {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+  width: 100%;
+  align-items: flex-start;
+  border-bottom: 5px solid black;
+  position: relative;
+}
+
+.order {
+  width: 100%;
+  font-size: 1.2rem;
+  font-family: 'Archivo';
+}
+
+.dateMenu {
+  display: inline-block;
+  font-family: 'Archivo';
+  font-size: 3.2rem;
+  font-weight: bold;
+}
