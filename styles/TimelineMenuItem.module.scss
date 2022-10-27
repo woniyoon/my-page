@@ -1,3 +1,6 @@
+$order-font-size: 1.2rem;
+$menu-font-size: 3.2rem;
+
 .container {
   justify-content: space-evenly;
   display: flex;
@@ -11,13 +14,24 @@
 
 .order {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: $order-font-size;
   font-family: 'Archivo';
 }
 
 .dateMenu {
   display: inline-block;
   font-family: 'Archivo';
-  font-size: 3.2rem;
+  font-size: $menu-font-size;
   font-weight: bold;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .dateMenu {
+    font-size: $menu-font-size*0.7;
+  }
+
+  .order {
+    font-size: $order-font-size*0.9;
+  }
 }

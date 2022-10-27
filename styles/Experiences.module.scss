@@ -1,11 +1,14 @@
 $skills-font-size: 1.5rem;
+$title-font-size: 3rem;
+$location-font-size: 1.8rem;
+$period-font-size: 1.4rem;
+$desc-font-size: 1.8rem;
 
 .expContainer {
   flex: 1;
-  border-width: 5px solid red;
   display: flex;
   flex-direction: row;
-  padding: 0 5rem;
+  padding: 1.5rem 5rem;
 }
 
 .timelineMenu {
@@ -22,20 +25,20 @@ $skills-font-size: 1.5rem;
 
 .recordTitle {
   display: block;
-  font-size: 3rem;
+  font-size: $title-font-size;
   font-weight: bold;
 }
 
 .recordLocation {
   display: block;
-  font-size: 1.8rem;
+  font-size: $location-font-size;
   font-weight: bold;
   text-align: right;
 }
 
 .recordPeriod {
   display: block;
-  font-size: 1.4rem;
+  font-size: $period-font-size;
   font-weight: bold;
   text-align: right;
 }
@@ -50,6 +53,45 @@ $skills-font-size: 1.5rem;
 }
 
 .recordDescription {
-  font-size: 1.8rem;
+  font-size: $desc-font-size;
   margin-top: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .expContainer {
+    padding: 1rem 1rem;
+  }
+
+  .timelineMenu {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .mainContent {
+    padding: 1rem;
+  }
+
+  .recordTitle {
+    font-size: $title-font-size*0.8;
+  }
+  
+  .recordLocation {
+    margin-top: $location-font-size;
+    font-size: $location-font-size*0.8;
+  }
+  
+  .recordPeriod {
+    margin-top: $period-font-size*0.2;
+    font-size: $period-font-size*0.8;
+  }
+
+  .recordSkills {
+    font-size: $skills-font-size*0.8;
+    border-bottom: 5px solid rgba(0, 255, 0, 0.658);
+  }
+
+  .recordDescription {
+    font-size: $desc-font-size*0.7;
+    margin-top: 2rem;
+  }
 }
