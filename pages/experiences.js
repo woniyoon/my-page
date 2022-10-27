@@ -6,8 +6,9 @@ import styles from '@/styles/Experiences.module.scss'
 import { MdSchool, MdWork } from 'react-icons/md';
 
 export default function Experiences({record}) {
-  const [currentRecordNo, setCurrentRecordNo] = useState(1);
-  const currentRecord = record[currentRecordNo-1];
+  const [currentRecordNo, setCurrentRecordNo] = useState(0);
+  const currentRecord = record[currentRecordNo];
+
   return (
     <Layout>
       <div className={styles.expContainer}>
@@ -57,7 +58,8 @@ export async function getStaticProps(context) {
   const result = await res.json();
 
   
-  const record = result.results.map((row) => {
+  const record = result.results.sort(sortByOrder)
+    .map((row, index) => {
     return {
         name: row.properties.name.title[0].plain_text,
         skills: row.properties.skills.multi_select?.map(skill => {return skill.name}).join(", ") ?? null,
@@ -66,10 +68,10 @@ export async function getStaticProps(context) {
         startDate: row.properties.period.date.start,
         endDate: row.properties.period.date.end,
         description: row.properties.description.rich_text[0].plain_text,
-        order: row.properties.order.number,
+        order: index,
       }
     }
-  ).sort(sortByOrder);
+  );
 
   return {
     props: {
@@ -79,5 +81,5 @@ export async function getStaticProps(context) {
 }
 
 function sortByOrder(prev, curr) {
-  return new Date(prev.startDate) - new Date(curr.startDate);
+  return new Date(curr.properties.period.date.start) - new Date(prev.properties.period.date.start);
 }

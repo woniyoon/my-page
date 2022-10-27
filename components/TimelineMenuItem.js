@@ -10,7 +10,7 @@ export default function TimelineMenuItem({item, currentRecordNo, displayThisReco
 
   return (
     <div className={styles.container} onClick={() => {clickHandler(order)}}>
-      <span className={styles.order}>{`${order}.`}</span>
+      <span className={styles.order}>{`${order+1}.`}</span>
       <span className={`${styles.dateMenu} ${isSelected ? styles.selectedRecord : ''}`}>{startDate}</span>
     </div>
   )
