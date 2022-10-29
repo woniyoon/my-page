@@ -1,0 +1,66 @@
+$outer-triangle-width: 20rem;
+$inner-triangle-width: 10rem;
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.greetingContainer {
+  padding: 4rem 4rem 0 4rem;
+}
+
+.greetingTxt {
+  font-family: 'amerton';
+  font-size: 5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.triangleContainer {
+  width: 100%;
+  position: absolute;
+  top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.outerTriangle {
+  --width: 20rem;
+  border-bottom: calc(0.866 * var(--width)) solid #00000053;
+  border-left: calc(var(--width) / 2) solid transparent;
+  border-right: calc(var(--width) / 2) solid transparent;
+  border-top: 0;
+  height: 0;
+  width: 0;
+}
+
+.innerTriangle {
+  --width: 10rem;
+  border-bottom: calc(0.866 * var(--width)) solid #73ff01b1;
+  border-left: calc(var(--width) / 2) solid transparent;
+  border-right: calc(var(--width) / 2) solid transparent;
+  border-top: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 10.5rem;
+  bottom: 1rem;
+  transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 768px) {
+  .greetingContainer {
+    padding: 5rem 2rem;
+  }  
+
+  .outerTriangle {
+    --width: 20rem*1.3;
+  }
+
+  .innerTriangle {
+    --width: 10rem*1.3;
+  }
+}
