@@ -1,0 +1,103 @@
+$name-card-width: 520px;
+$name-card-height: 300px;
+
+.nameCardContainer {
+  margin: 2rem 0;
+  width: $name-card-width;
+  height: $name-card-height;
+  border-radius: 8px;
+  background-color: rgb(89, 154, 115);
+  transform: rotate(180deg);
+  transform-origin: right top;
+  position: absolute;
+  animation: spin 1s forwards 1;
+  animation-timing-function: ease-out;
+  display: flex;
+  flex-direction: row;
+}
+
+.leftSide {
+  position: relative;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.leftSide::after {
+  content: '';
+  width: 1px;
+  height: $name-card-height*0.9;
+  background-color: black;
+  position: absolute;
+  right: 0;
+  top: $name-card-height*0.1*0.5;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-family: 'Helvetica Neue';
+}
+
+.rightSide {
+  padding: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 4px 0 0 0;
+  width: 90%;
+}
+
+.contactLink {
+  font-size: 1.1rem;
+  text-align: end;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+
+@media only screen and (max-width: 630px) {
+  .nameCardContainer {
+    width: $name-card-width*0.75;
+    height: $name-card-height*0.75;
+  }
+
+  .leftSide::after {
+    height: $name-card-height*0.75*0.9;
+    top: $name-card-height*0.75*0.1*0.5;
+  }
+
+  .contact {
+    align-items: flex-start;
+  }
+
+  .name {
+    font-size: 0.9rem;
+  }
+
+  .contactLink {
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes spin { 
+  0% {
+    top: 300px;
+    right: -$name-card-width;
+  }
+  100% { 
+    top: 100px;
+    right: 5rem;
+    transform:rotate(350deg); 
+  } 
+}
