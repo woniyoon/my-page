@@ -21,6 +21,7 @@ export default function Contacts({contacts}) {
 
   return (
     <Layout>
+      <div className={styles.cardPiles}></div>
       <div className={styles.nameCardContainer}>
         <div className={styles.leftSide}>
           <span className={styles.name}>Jaewon</span>
