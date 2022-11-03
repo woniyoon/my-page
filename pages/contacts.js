@@ -1,4 +1,4 @@
-import Layout from "../components/Layout.js";
+import Layout from "../components/layout.js";
 import { TOKEN, DATABASE_CON_ID } from "../config";
 import styles from '../styles/Contacts.module.scss'
 import { MdOutlineEmail } from "react-icons/md";

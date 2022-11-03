@@ -1,5 +1,5 @@
 import {useState} from "react";
-import Layout from "../components/Layout.js";
+import Layout from "../components/layout.js";
 import { TOKEN, DATABASE_EXP_ID } from "../config";
 import TimelineMenuItem from "../components/TimelineMenuItem.js";
 import styles from '../styles/Experiences.module.scss'
