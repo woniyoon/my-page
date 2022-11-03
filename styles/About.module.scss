@@ -37,9 +37,9 @@
 }
 
 .cardContainer:nth-child(4)::after {
-  content: '\00a0\00a0\00a0\00a0😋🧇🦄';
+  content: '\00a0\00a0😋🧇☕️';
   font-size: 6rem;
-  width: 300px;
+  width: 16rem;
   height: 6.5rem;
   position: absolute;
   transform: rotate(22deg);
@@ -51,13 +51,13 @@
 }
 
 .cardContainer:nth-child(4)::before {
-  content: '🧸';
+  content: '🏝';
   font-size: 8rem;
   position: absolute;
-  top: 7rem;
-  right: 5rem;
-  transform: rotate(-30deg);
+  top: 10rem;
+  right: 1rem;
   z-index: 2;
+  transform: rotate(-10deg);
   animation: lowerHop 1s alternate-reverse infinite linear;
 }
 
@@ -99,27 +99,18 @@
   }
 
   .cardContainer:nth-child(4)::after {
-    content: '\00a0\00a0\00a0\00a0😋🧇🦄';
     font-size: 3.5rem;
-    width: 200px;
+    width: 10rem;
     height: 4rem;
-    position: absolute;
-    transform: rotate(22deg);
-    top: 1rem;
-    right: -20px;
-    background-color: rgba(0, 255, 0, 0.659);
     z-index: 3;
   }
   
   .cardContainer:nth-child(4)::before {
-    content: '🧸';
     font-size: 5rem;
     width: 100px;
     height: 50px;
-    position: absolute;
     top: 3.2rem;
-    right: 3rem;
-    transform: rotate(-30deg);
+    right: 0rem;
     z-index:5;
   }
 }
