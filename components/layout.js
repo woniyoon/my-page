@@ -1,4 +1,4 @@
-import NavBar from "./NavBar";
+import NavBar from "./NavBar.js";
 
 export default function Layout({children}) {  // container 개념
   return (

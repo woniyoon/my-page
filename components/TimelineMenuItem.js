@@ -1,4 +1,4 @@
-import styles from '@/styles/TimelineMenuItem.module.scss'
+import styles from '../styles/TimelineMenuItem.module.scss'
 
 export default function TimelineMenuItem({item, currentRecordNo, displayThisRecord}) {
   const {order, name, location, startDate, endDate, skills, description} = item;

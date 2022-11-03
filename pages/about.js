@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout";
-import { TOKEN, DATABASE_ABOUT_ID } from "@/config";
-import styles from '@/styles/About.module.scss'
+import Layout from "../components/Layout.js";
+import { TOKEN, DATABASE_ABOUT_ID } from "../config";
+import styles from '../styles/About.module.scss'
 
 export default function About({myInfo}) {
   return (

@@ -1,7 +1,6 @@
-import {useState} from "react";
-import Layout from "@/components/Layout";
-import { TOKEN, DATABASE_CON_ID } from "@/config";
-import styles from '@/styles/Contacts.module.scss'
+import Layout from "../components/Layout.js";
+import { TOKEN, DATABASE_CON_ID } from "../config";
+import styles from '../styles/Contacts.module.scss'
 import { MdOutlineEmail } from "react-icons/md";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 

@@ -1,8 +1,8 @@
 import {useState} from "react";
-import Layout from "@/components/Layout";
-import { TOKEN, DATABASE_EXP_ID } from "@/config";
-import TimelineMenuItem from "@/components/TimelineMenuItem";
-import styles from '@/styles/Experiences.module.scss'
+import Layout from "../components/Layout.js";
+import { TOKEN, DATABASE_EXP_ID } from "../config";
+import TimelineMenuItem from "../components/TimelineMenuItem.js";
+import styles from '../styles/Experiences.module.scss'
 import { MdSchool, MdWork } from 'react-icons/md';
 
 export default function Experiences({record}) {

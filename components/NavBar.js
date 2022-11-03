@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '@/styles/NavBar.module.css'
+import styles from '../styles/NavBar.module.css'
 import {useRouter} from 'next/router';
 
 export default function NavBar() {
