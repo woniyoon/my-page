@@ -34,8 +34,12 @@ export default function Experiences({record}) {
           <span className={styles.recordLocation}>{currentRecord.location}</span>
           <span className={styles.recordPeriod}>{`${currentRecord.startDate} - ${currentRecord.endDate}`}</span>
           <div className={styles.descriptionContainer}>
-            <span className={styles.recordSkills}>{currentRecord.skills}</span>
-            <p className={styles.recordDescription}>{currentRecord.description}</p>
+            <p className={styles.recordSkills}>{currentRecord.skills}</p>
+            {
+              currentRecord.description.map((desc, index) => 
+                <span key={`desc-${index}`} className={styles.recordDescription}>{`· ${desc}`}</span>
+              )
+            }
           </div>
         </article>
       </div>
@@ -67,7 +71,7 @@ export async function getStaticProps(context) {
         status: row.properties.status.select.name,
         startDate: row.properties.period.date.start,
         endDate: row.properties.period.date.end,
-        description: row.properties.description.rich_text[0].plain_text,
+        description: row.properties.description.multi_select?.map(desc => {return desc.name}),
         order: index,
       }
     }
