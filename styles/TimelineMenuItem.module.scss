@@ -27,8 +27,12 @@ $menu-font-size: 3.2rem;
 }
 
 @media only screen and (max-width: 768px) {
+  .container {
+    border-bottom: 4px solid black;
+  }
+
   .dateMenu {
-    font-size: $menu-font-size*0.7;
+    font-size: $menu-font-size*0.5;
   }
 
   .order {

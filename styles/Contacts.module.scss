@@ -1,5 +1,7 @@
 $name-card-width: 520px;
 $name-card-height: 300px;
+$sm-name-card-width: 90vw;
+$sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
 
 .cardPiles {
   width: $name-card-width;
@@ -139,6 +141,38 @@ $name-card-height: 300px;
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .cardPiles, .cardPiles::after, .cardPiles::before, .nameCardContainer {
+    width: $sm-name-card-width;
+    height: $sm-name-card-height;
+    left: 4px;
+  }
+
+  .cardPiles {
+    margin: 3rem 0;
+  }
+
+  .leftSide, .rightSide {
+    padding: 12px;
+  }
+
+  .leftSide::after {
+    height: $sm-name-card-height*0.9;
+  }
+
+  .contact {
+    align-items: flex-start;
+  }
+
+  .name {
+    font-size: 0.7rem;
+  }
+
+  .contactLink {
+    font-size: 0.8rem;
+  }
+}
+
 @keyframes spin { 
   0% {
     top: 300px;
@@ -146,7 +180,7 @@ $name-card-height: 300px;
   }
   100% { 
     top: 100px;
-    right: 5rem;
+    right: 8%;
     transform:rotate(350deg); 
   } 
 }

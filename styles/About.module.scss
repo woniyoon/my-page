@@ -91,10 +91,14 @@
   }
 
   .cardLabel {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .cardValue {
+    font-size: 1.3rem;
+  }
+
+  .cardContainer:nth-child(1)::after {
     font-size: 1.7rem;
   }
 
