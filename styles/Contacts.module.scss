@@ -122,10 +122,6 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   .nameCardContainer {
     width: $name-card-width*0.75;
     height: $name-card-height*0.75;
-    animation: spinOnMobile 1 0.6s forwards ease-out;
-    right: -($name-card-width*0.75);
-    top: $name-card-height*0.75;
-    position: relative;
   }
 
   .leftSide::after {
@@ -143,6 +139,16 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
 
   .contactLink {
     font-size: 0.8rem;
+  }
+}
+
+// remove animation on mobile devices
+@media only screen and (hover: none) and (pointer: coarse){
+  .nameCardContainer {
+    animation: none;
+    right: 50px;
+    transform: rotate(350deg); 
+    top: 6rem;
   }
 }
 
@@ -202,19 +208,5 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
     right: 100px;
     visibility: visible;
     transform: rotate(350deg); 
-  } 
-}
-
-@keyframes spinOnMobile { 
-  0% {
-    top: 300px;
-    right: 0;
-    visibility: hidden;
-  }
-  100% { 
-    top: 30px;
-    left: -20px;
-    visibility: visible;
-    transform:rotate(350deg); 
   } 
 }

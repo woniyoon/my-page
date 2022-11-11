@@ -83,7 +83,7 @@
   text-align: end;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
   .main {
     margin: 0 0;
     grid-template-columns: repeat(2, 1fr);
@@ -120,7 +120,6 @@
 }
 
 // animations
-
 @keyframes spin {
   0% {
     transform: rotate(0deg) rotateY(180deg);
