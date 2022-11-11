@@ -49,8 +49,9 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   transform: rotate(180deg);
   transform-origin: right top;
   position: absolute;
-  animation: spin 0.6s forwards 1;
-  animation-timing-function: ease-out;
+  right: -($name-card-width);
+  top: $name-card-height;
+  animation: spin 1 0.6s forwards ease-out;
   display: flex;
   flex-direction: row;
   box-shadow: 4px 4px 3px #6865656d;
@@ -121,6 +122,10 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   .nameCardContainer {
     width: $name-card-width*0.75;
     height: $name-card-height*0.75;
+    animation: spinOnMobile 1 0.6s forwards ease-out;
+    right: -($name-card-width*0.75);
+    top: $name-card-height*0.75;
+    position: relative;
   }
 
   .leftSide::after {
@@ -141,7 +146,8 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   }
 }
 
-@media only screen and (max-width: 500px) {
+// for small mobile devices
+@media only screen and (max-width: 480px) {
   .cardPiles, .cardPiles::after, .cardPiles::before, .nameCardContainer {
     width: $sm-name-card-width;
     height: $sm-name-card-height;
@@ -173,14 +179,42 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   }
 }
 
+// for iPhone SE & 6, 7, 8
+@media only screen and (max-width: 380px) {
+  .name {
+    font-size: 0.5rem;
+  }
+
+  .contactLink {
+    font-size: 0.7rem;
+  }
+}
+
+// animation
+// add suffix of OnMobile for mobile devices
 @keyframes spin { 
   0% {
     top: 300px;
-    right: -$name-card-width;
+    visibility: hidden;
   }
   100% { 
-    top: 100px;
-    right: 8%;
+    top: 80px;
+    right: 100px;
+    visibility: visible;
+    transform: rotate(350deg); 
+  } 
+}
+
+@keyframes spinOnMobile { 
+  0% {
+    top: 300px;
+    right: 0;
+    visibility: hidden;
+  }
+  100% { 
+    top: 30px;
+    left: -20px;
+    visibility: visible;
     transform:rotate(350deg); 
   } 
 }
