@@ -55,6 +55,12 @@
   }
 }
 
+@media only screen and (min-width: 2400px) {
+  .container {
+    padding: 1rem 13rem;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .container {
     padding: 1rem 1rem;
