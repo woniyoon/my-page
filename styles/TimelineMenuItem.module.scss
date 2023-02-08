@@ -1,41 +1,133 @@
-$order-font-size: 1.2rem;
-$menu-font-size: 3.2rem;
+$menu-font-size: 2.5rem;
 
 .container {
-  justify-content: space-evenly;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.timelineContainer {
   display: flex;
   flex-direction: column;
-  margin: 0.5rem 0;
-  width: 100%;
-  align-items: flex-start;
+  // width: 100%;
+  flex: 1;
+  border-right: 5px solid black;
+  border-top: 5px solid black;
   border-bottom: 5px solid black;
   position: relative;
-}
+  transform: rotate(180deg);
+  background-color: transparent;
+  padding: 10px;
 
-.order {
-  width: 100%;
-  font-size: $order-font-size;
-  font-family: 'Archivo';
-}
-
-.dateMenu {
-  display: inline-block;
-  font-family: 'Archivo';
-  font-size: $menu-font-size;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 768px) {
-  .container {
-    border-bottom: 4px solid black;
+  &:last-child{
+    border-left: 5px solid black;
   }
 
   .dateMenu {
-    font-size: $menu-font-size*0.5;
+    display: inline-block;
+    font-family: 'Archivo';
+    font-size: $menu-font-size;
+    font-weight: bold;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    transition: color 0.2s ease-in-out;
   }
 
-  .order {
-    font-size: $order-font-size*0.9;
+  .selectedRecord {
+    color: rgba(0, 255, 0, 0.824);
+    text-decoration: underline;
+  }
+}
+
+.selectedTimelineContainer {
+  border-left: none;
+  position: relative;
+}
+
+.detail {
+  border-top: 5px solid black;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+  padding: 30px 25px;
+  min-width: 400px;
+
+  & > span {
+    display: block;
+    margin-left: 30px;
+  }
+
+  .companyName {
+    font-size: 1.6rem;
+  }
+  
+  .detailTxt {
+    font-size: 1.4rem;
+  }
+  
+  .detailDescription {
+    margin-top: 0.5rem;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  
+  .recordSkills {
+    margin: 20px 0;
+    font-size: 1.2rem;
+  }
+}
+
+.selectedDetail {
+  text-align: right;  
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+      border-bottom: 5px solid black;
+    }
+  }
+
+  .timelineContainer {
+    border-bottom: 4px solid black;
+    transform: none;
+    border-left: 5px solid black;
+    border-top: 5px solid black;
+    border-bottom: none;
+
+    .dateMenu {
+      font-size: $menu-font-size*0.7;
+      writing-mode: horizontal-tb;
+    }
+  }
+
+  .detail {
+    border-left: 5px solid black;
+    border-top: 0;
+    position: relative;
+
+    & :nth-child(1) {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      margin-bottom: 10px;
+    }
+
+    .companyName, & :nth-child(3) {
+      text-align: right;
+    }
+
+    & > span {
+      margin-left: 0;
+    }
+  }
+
+  .selectedDetail {
+    text-align: start;
   }
 }

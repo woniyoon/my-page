@@ -3,45 +3,28 @@ import Layout from "../components/layout.js";
 import { TOKEN, DATABASE_EXP_ID } from "../config";
 import TimelineMenuItem from "../components/TimelineMenuItem.js";
 import styles from '../styles/Experiences.module.scss'
-import { MdSchool, MdWork } from 'react-icons/md';
 
-export default function Experiences({record}) {
-  const [currentRecordNo, setCurrentRecordNo] = useState(0);
-  const currentRecord = record[currentRecordNo];
+export default function Experiences({data}) {
+  const [records, setRecords] = useState(data);
+
+  const showItemIdx = (idx) => {
+    const data = records.map((item, index) => { return {...item, isSelected: index === idx }})
+    setRecords(data);
+  }
 
   return (
     <Layout>
-      <div className={styles.expContainer}>
-        <aside className={styles.timelineMenu}>
-          {
-            record.map((item, index) => {
-              return (
-                <TimelineMenuItem
-                  key={`timeline-${index}`}
-                  item={item}
-                  currentRecordNo={currentRecordNo}
-                  displayThisRecord={setCurrentRecordNo} 
-                />)
-            })
-          }
-        </aside>
-        <article className={styles.mainContent}>
-          { 
-            currentRecord.status === 'study' ? 
-            <MdSchool size='2rem' /> : <MdWork size='2rem' />
-          }
-          <span className={styles.recordTitle}>{currentRecord.name}</span>
-          <span className={styles.recordLocation}>{currentRecord.location}</span>
-          <span className={styles.recordPeriod}>{`${currentRecord.startDate} - ${currentRecord.endDate}`}</span>
-          <div className={styles.descriptionContainer}>
-            <p className={styles.recordSkills}>{currentRecord.skills}</p>
-            {
-              currentRecord.description.map((desc, index) => 
-                <span key={`desc-${index}`} className={styles.recordDescription}>{`· ${desc}`}</span>
-              )
-            }
-          </div>
-        </article>
+      <div className={styles.timelineMenu}>
+        {
+          records.map((item, index) => {
+            return (
+              <TimelineMenuItem
+                key={`timeline-${index}`}
+                item={item}
+                showItemIdx={showItemIdx}
+              />)
+          })
+        }
       </div>
     </Layout>
   );
@@ -61,25 +44,25 @@ export async function getStaticProps(context) {
     
   const result = await res.json();
 
-  
-  const record = result.results.sort(sortByOrder)
+  const data = result.results.sort(sortByOrder)
     .map((row, index) => {
     return {
         name: row.properties.name.title[0].plain_text,
         skills: row.properties.skills.multi_select?.map(skill => {return skill.name}).join(", ") ?? null,
         location: row.properties.location.rich_text[0].plain_text,
         status: row.properties.status.select.name,
-        startDate: row.properties.period.date.start,
-        endDate: row.properties.period.date.end,
+        startDate: row.properties.period.date.start.replaceAll('-', '/'),
+        endDate: row.properties.period.date.end.replaceAll('-', '/'),
         description: row.properties.description.multi_select?.map(desc => {return desc.name}),
         order: index,
+        isSelected: index === 0,
       }
     }
   );
 
   return {
     props: {
-      record
+      data
     }
   }
 }
