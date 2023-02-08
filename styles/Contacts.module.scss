@@ -75,7 +75,7 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
     top: $name-card-height*0.1*0.5;
   }
 
-  .name {
+  &.name {
     font-size: 1.2rem;
     font-family: 'Helvetica Neue';
     font-weight: bold;
@@ -91,7 +91,7 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   justify-content: flex-end;
   align-items: flex-end;
   
-  .contact {
+  &.contact {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -99,7 +99,7 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
     width: 90%;
   }
   
-  .contactLink {
+  &.contactLink {
     font-size: 1.1rem;
     text-align: end;
     text-decoration: underline;
