@@ -12,32 +12,32 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   position: absolute;
   right: 2rem;
   box-shadow: 4px 4px 3px #1c1c1c6d;
-}
-
-.cardPiles::before {
-  content: '';
-  width: $name-card-width;
-  height: $name-card-height;
-  border-radius: 8px;
-  background-color: rgb(81, 124, 99);
-  margin: 4rem 0;
-  position: absolute;
-  right: 4rem;
-  box-shadow: 4px 4px 3px #1c1c1c6d;
-  transform: rotate(-30deg);
-}
-
-.cardPiles::after {
-  content: '';
-  width: $name-card-width;
-  height: $name-card-height;
-  border-radius: 8px;
-  background-color: rgb(189, 210, 198);
-  margin: 3rem 0;
-  position: absolute;
-  right: 2rem;
-  box-shadow: 4px 4px 3px #1c1c1c6d;
-  transform: rotate(20deg);
+  
+  &::before {
+    content: '';
+    width: $name-card-width;
+    height: $name-card-height;
+    border-radius: 8px;
+    background-color: rgb(81, 124, 99);
+    margin: 4rem 0;
+    position: absolute;
+    right: 4rem;
+    box-shadow: 4px 4px 3px #1c1c1c6d;
+    transform: rotate(-30deg);
+  }
+  
+  &::after {
+    content: '';
+    width: $name-card-width;
+    height: $name-card-height;
+    border-radius: 8px;
+    background-color: rgb(189, 210, 198);
+    margin: 3rem 0;
+    position: absolute;
+    right: 2rem;
+    box-shadow: 4px 4px 3px #1c1c1c6d;
+    transform: rotate(20deg);
+  }
 }
 
 .nameCardContainer {
@@ -64,23 +64,23 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-}
 
-.leftSide::after {
-  content: '';
-  width: 1px;
-  height: $name-card-height*0.9;
-  background-color: rgb(30, 30, 30);
-  position: absolute;
-  right: 0;
-  top: $name-card-height*0.1*0.5;
-}
+  &::after {
+    content: '';
+    width: 1px;
+    height: $name-card-height*0.9;
+    background-color: rgb(30, 30, 30);
+    position: absolute;
+    right: 0;
+    top: $name-card-height*0.1*0.5;
+  }
 
-.name {
-  font-size: 1.2rem;
-  font-family: 'Helvetica Neue';
-  font-weight: bold;
-  color: rgb(30, 30, 30);
+  .name {
+    font-size: 1.2rem;
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    color: rgb(30, 30, 30);
+  }
 }
 
 .rightSide {
@@ -90,22 +90,22 @@ $sm-name-card-height: $sm-name-card-width*$name-card-height/$name-card-width;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-}
-
-.contact {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  margin: 4px 0 0 0;
-  width: 90%;
-}
-
-.contactLink {
-  font-size: 1.1rem;
-  text-align: end;
-  text-decoration: underline;
-  cursor: pointer;
-  margin-left: 5px;
+  
+  .contact {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 4px 0 0 0;
+    width: 90%;
+  }
+  
+  .contactLink {
+    font-size: 1.1rem;
+    text-align: end;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 5px;
+  }
 }
 
 

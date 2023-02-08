@@ -15,28 +15,28 @@ $inner-triangle-width-sm: 8rem;
   left: -($outer-triangle-width/2 - 2rem);
   top: 2rem;
   transition: all 0.5s ease-in-out;
-}
-
-.greetingTxt {
-  font-family: 'amerton';
-  font-size: 7rem;
-  position: relative;
-  transition: all 0.5s ease-in-out;
-}
-
-.greetingDescAbove {
-  // margin-top: 1rem;
-  font-family: 'Times New Roman';
-  color: rgb(29, 29, 29);
-  font-size: 1.8rem;
-  transition: all 0.5s ease-in-out;
-}
-
-.greetingDescBelow {
-  font-family: 'Times New Roman';
-  color: #73ff01;
-  font-size: 1.8rem;
-  transition: all 0.5s ease-in-out;
+  
+  .greetingTxt {
+    font-family: 'amerton';
+    font-size: 7rem;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .greetingDescAbove {
+    // margin-top: 1rem;
+    font-family: 'Times New Roman';
+    color: rgb(29, 29, 29);
+    font-size: 1.8rem;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .greetingDescBelow {
+    font-family: 'Times New Roman';
+    color: #73ff01;
+    font-size: 1.8rem;
+    transition: all 0.5s ease-in-out;
+  }
 }
 
 .triangleContainer {
@@ -45,62 +45,61 @@ $inner-triangle-width-sm: 8rem;
   left: 1rem;
   display: flex;
   flex-direction: row;
-}
 
-.outerTriangle {
-  --width: 35rem;
-  border-bottom: calc(0.866 * var(--width)) solid #00000053;
-  border-left: calc(var(--width) / 2) solid transparent;
-  border-right: calc(var(--width) / 2) solid transparent;
-  border-top: 0;
-  height: 0;
-  width: 0;
-  transition: all 0.5s ease-in-out;
-}
-
-.innerTriangle {
-  --width: 13rem;
-  border-bottom: calc(0.866 * var(--width)) solid #73ff01;
-  border-left: calc(var(--width) / 2) solid transparent;
-  border-right: calc(var(--width) / 2) solid transparent;
-  border-top: 0;
-  height: 0;
-  width: 0;
-  position: absolute;
-  top: (0.866*$outer-triangle-width) - $inner-triangle-width;
-  left: ($outer-triangle-width)-($inner-triangle-width);
-  transform: rotate(180deg);
-  transition: all 0.5s ease-in-out;
+  .outerTriangle {
+    --width: 35rem;
+    border-bottom: calc(0.866 * var(--width)) solid #00000053;
+    border-left: calc(var(--width) / 2) solid transparent;
+    border-right: calc(var(--width) / 2) solid transparent;
+    border-top: 0;
+    height: 0;
+    width: 0;
+    transition: all 0.5s ease-in-out;
+    
+    .innerTriangle {
+      --width: 13rem;
+      border-bottom: calc(0.866 * var(--width)) solid #73ff01;
+      border-left: calc(var(--width) / 2) solid transparent;
+      border-right: calc(var(--width) / 2) solid transparent;
+      border-top: 0;
+      height: 0;
+      width: 0;
+      position: absolute;
+      top: (0.866*$outer-triangle-width) - $inner-triangle-width;
+      left: ($outer-triangle-width)-($inner-triangle-width);
+      transform: rotate(180deg);
+      transition: all 0.5s ease-in-out;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
+  .outerTriangle {
+    --width: 22rem;
+
+    .innerTriangle {
+      --width: 8rem;
+      top: (0.866*$outer-triangle-width-sm) - $inner-triangle-width-sm;
+      left: ($outer-triangle-width-sm)-($inner-triangle-width-sm);
+    }
+  }
+
   .greetingContainer {
     top: 2;
     left: -($outer-triangle-width-sm/2 - 1rem);
     width: $outer-triangle-width-sm - 4rem;
+
+    .greetingTxt {
+      font-size: 4rem;
+    }
+  
+    .greetingDescAbove {
+      margin-top: 0.2rem;
+      font-size: 1.2rem;
+    }
+    
+    .greetingDescBelow {
+      font-size: 1.2rem;
+    }
   }  
-
-  .outerTriangle {
-    --width: 22rem;
-  }
-
-  .innerTriangle {
-    --width: 8rem;
-    top: (0.866*$outer-triangle-width-sm) - $inner-triangle-width-sm;
-    left: ($outer-triangle-width-sm)-($inner-triangle-width-sm);
-  }
-
-  .greetingTxt {
-    font-size: 4rem;
-  }
-
-  .greetingDescAbove {
-    margin-top: 0.2rem;
-    font-size: 1.2rem;
-  }
-  
-  .greetingDescBelow {
-    font-size: 1.2rem;
-  }
-  
 }

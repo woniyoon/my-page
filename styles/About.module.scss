@@ -15,61 +15,61 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-}
 
-.cardContainer:nth-child(1) {
-  background-color: rgb(52, 52, 52);
-}
+  &:nth-child(1) {
+    background-color: rgb(52, 52, 52);
+  }
 
-.cardContainer:nth-child(1)::after {
-  color: #fff7e6;
-  content: 'Front-end\00000aDeveloper\00a0\00a0💻';
-  font-size: 2rem;
-  white-space: pre;
-}
-
-.cardContainer:nth-child(4),
-.cardContainer:nth-child(7) {
-  background-image:
-    linear-gradient(to right, black 1px, transparent 1px),
-    linear-gradient(to bottom, black 1px, transparent 1px);
-  background-size: 11.08px 11.08px;
-}
-
-.cardContainer:nth-child(4)::after {
-  content: '\00a0\00a0😋🧇☕️';
-  font-size: 6rem;
-  width: 16rem;
-  height: 6.5rem;
-  position: absolute;
-  transform: rotate(22deg);
-  top: 1rem;
-  right: -20px;
-  background-color: rgba(0, 255, 0, 0.659);
-  z-index: 1;
-  animation: upperHop 1s alternate infinite linear;
-}
-
-.cardContainer:nth-child(4)::before {
-  content: '🏝';
-  font-size: 8rem;
-  position: absolute;
-  top: 10rem;
-  right: 1rem;
-  z-index: 2;
-  transform: rotate(-10deg);
-  animation: lowerHop 1s alternate-reverse infinite linear;
-}
-
-.cardContainer:nth-child(7)::before {
-  content: '🦮';
-  font-size: 8rem;
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  z-index: 2;
-  transform: rotate(-10deg) rotateY(180deg);
-  animation: spin 0.5s alternate infinite linear;
+  &:nth-child(1)::after {
+    color: #fff7e6;
+    content: 'Front-end\00000aDeveloper\00a0\00a0💻';
+    font-size: 2rem;
+    white-space: pre;
+  }
+  
+  &:nth-child(4),
+  &:nth-child(7) {
+    background-image:
+      linear-gradient(to right, black 1px, transparent 1px),
+      linear-gradient(to bottom, black 1px, transparent 1px);
+    background-size: 11.08px 11.08px;
+  }
+  
+  &:nth-child(4)::after {
+    content: '\00a0\00a0😋🧇☕️';
+    font-size: 6rem;
+    width: 16rem;
+    height: 6.5rem;
+    position: absolute;
+    transform: rotate(22deg);
+    top: 1rem;
+    right: -20px;
+    background-color: rgba(0, 255, 0, 0.659);
+    z-index: 1;
+    animation: upperHop 1s alternate infinite linear;
+  }
+  
+  &:nth-child(4)::before {
+    content: '🏝';
+    font-size: 8rem;
+    position: absolute;
+    top: 10rem;
+    right: 1rem;
+    z-index: 2;
+    transform: rotate(-10deg);
+    animation: lowerHop 1s alternate-reverse infinite linear;
+  }
+  
+  &:nth-child(7)::before {
+    content: '🦮';
+    font-size: 8rem;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    z-index: 2;
+    transform: rotate(-10deg) rotateY(180deg);
+    animation: spin 0.5s alternate infinite linear;
+  }
 }
 
 .cardLabel {
@@ -96,6 +96,28 @@
     grid-template-rows: repeat(4, 1fr);
   }
 
+  .cardContainer {
+    &:nth-child(1)::after {
+      font-size: 1.7rem;
+    }
+  
+    &:nth-child(4)::after {
+      font-size: 3.5rem;
+      width: 10rem;
+      height: 4rem;
+      z-index: 3;
+    }
+    
+    &:nth-child(4)::before {
+      font-size: 5rem;
+      width: 100px;
+      height: 50px;
+      top: 3.2rem;
+      right: 0rem;
+      z-index:5;
+    }
+  }
+
   .cardLabel {
     font-size: 1.1rem;
   }
@@ -104,25 +126,6 @@
     font-size: 1.3rem;
   }
 
-  .cardContainer:nth-child(1)::after {
-    font-size: 1.7rem;
-  }
-
-  .cardContainer:nth-child(4)::after {
-    font-size: 3.5rem;
-    width: 10rem;
-    height: 4rem;
-    z-index: 3;
-  }
-  
-  .cardContainer:nth-child(4)::before {
-    font-size: 5rem;
-    width: 100px;
-    height: 50px;
-    top: 3.2rem;
-    right: 0rem;
-    z-index:5;
-  }
 }
 
 // animations
