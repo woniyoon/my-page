@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Welcome to My Page 👋
 
-## Getting Started
+Hello, readers!
 
-First, run the development server:
+This repository contains the source code for my page, which was created with React.js(⚛️), Next.js(𝑁) and SCSS(💅).
+Notion(🅽) is additionally used for the database.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This page is aimed for both introducing more about myself in an old-fashioned theme design and practicing unfamiliar skills such as Next.js, SCSS and Notion.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you wanna check out how it looks like, you're more than welcome!
+[https://j1.vercel.app/](https://j1.vercel.app/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+All rights are reserved for Jaewon.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 환영해요 👋
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+안녕하세요!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+이 리파지토리는 제 포트폴리오 페이지의 소스코드를 포함하고 있습니다. 포트폴리오 페이지는 React.js(⚛️), Next.js(𝑁) 그리고 SCSS(💅)를 이용해 만들어졌으며, 덤으로 노션(🅽)을 DB로 이용했습니다.
 
-## Deploy on Vercel
+포트폴리오 페이지는 이력서 외 별도의 페이지로 저에 대해 소개할 수 있고 Next.js, SCSS, 노션을 연습하기 위해 만들어졌습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+어떻게 생겼는지 보고 싶으시면, 다음 링크로 방문해주세요!
+[https://j1.vercel.app/](https://j1.vercel.app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+모든 저작권은 재원에게 있습니다.
